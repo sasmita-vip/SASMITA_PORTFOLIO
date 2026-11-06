@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sasmita Vi P – Full-Stack Developer | AI/ML Enthusiast</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --wine:#2a0c14; --wine2:#3a1320; --wine3:#4d1b2b;
+  --cream:#f3e9d8; --muted:#cdb9a6; --copper:#c8793f; --copper2:#e0985c;
+  --paper:#efe4d0; --ink:#2a0c14; --ink2:#5c3a30;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Karla",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root{color-scheme:dark}}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--wine);color:var(--cream);font:17px/1.65 var(--sans);overflow-x:hidden;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--wine);z-index:60}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;margin:0}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+h2{font-size:clamp(2rem,6vw,3rem);margin-bottom:34px}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;border:1.5px solid var(--copper);text-decoration:none;font-weight:700;transition:background .2s,color .2s,transform .2s}
+.btn.solid{background:var(--copper);color:var(--ink)}
+.btn.solid:hover{background:var(--copper2)}
+.btn.ghost:hover{background:rgba(200,121,63,.18)}
+:focus-visible{outline:2px solid var(--copper2);outline-offset:3px}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(42,12,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,121,63,.28)}
+nav .wrap{display:flex;align-items:center;gap:18px;height:60px}
+.brand{font-family:var(--serif);font-weight:800;font-size:1.25rem;text-decoration:none;color:var(--copper2);flex:none}
+.links{display:flex;gap:20px;margin-left:auto;overflow-x:auto;scrollbar-width:none;min-width:0}
+.links::-webkit-scrollbar{display:none}
+.links a{text-decoration:none;font-size:.95rem;color:var(--muted);white-space:nowrap;padding:6px 0}
+.links a:hover{color:var(--cream)}
+
+/* hero */
+.hero{padding:76px 0 90px;border-bottom:1px solid rgba(200,121,63,.25)}
+.hero .role{color:var(--copper2);font-weight:700;margin:0 0 14px}
+.hero h1{font-size:clamp(3.1rem,17vw,9.5rem);font-weight:800;letter-spacing:-.02em;line-height:.95;word-break:break-word}
+.hero p.tag{font-family:var(--serif);font-size:clamp(1.2rem,3.6vw,1.75rem);line-height:1.4;max-width:30em;margin:28px 0 36px;color:var(--cream)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+
+/* about */
+.about p{max-width:42em;font-size:1.12rem;margin:0 0 16px}
+
+/* counters */
+.counters{padding:0;background:var(--wine3);border-block:1px solid rgba(200,121,63,.3)}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr)}
+.cgrid div{padding:42px 12px;text-align:center;border-right:1px solid rgba(200,121,63,.25)}
+.cgrid div:last-child{border-right:0}
+.num{font-family:var(--serif);font-weight:800;font-size:clamp(2.4rem,7vw,3.8rem);color:var(--copper2);line-height:1}
+.cgrid span{display:block;margin-top:8px;color:var(--muted);font-size:.95rem}
+
+/* skills */
+.skills{background:var(--paper);color:var(--ink)}
+.skills h2{color:var(--ink)}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px}
+.skill{padding:22px;border:1.5px solid var(--ink);border-radius:6px}
+.skill h3{font-size:1.2rem;color:#8a4a1f;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chips span{font-size:.88rem;padding:4px 11px;border-radius:999px;background:rgba(42,12,20,.08);color:var(--ink)}
+
+/* experience */
+.job{display:grid;grid-template-columns:200px 1fr;gap:10px 36px;padding:30px 0;border-top:1px solid rgba(200,121,63,.3)}
+.job time{color:var(--copper2);font-weight:700}
+.job h3{font-size:1.5rem;margin-bottom:4px}
+.org{color:var(--muted);margin:0 0 12px}
+ul{margin:0;padding-left:1.15em}
+li{margin:5px 0}
+li::marker{color:var(--copper)}
+
+/* projects */
+.pgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{background:var(--wine2);border:1px solid rgba(200,121,63,.3);border-radius:10px;padding:28px;display:flex;flex-direction:column}
+.card.feat{grid-column:1/-1;background:var(--wine3);border-color:var(--copper);padding:34px}
+.card h3{font-size:1.5rem;margin-bottom:8px}
+.card.feat h3{font-size:clamp(1.7rem,4.5vw,2.3rem)}
+.pitch{color:var(--muted);margin:0 0 14px}
+.card ul{margin-bottom:18px}
+.feat ul{columns:2;column-gap:36px}
+.feat li{break-inside:avoid}
+.tech{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;margin-bottom:16px}
+.tech span{font-size:.84rem;padding:3px 11px;border:1px solid var(--copper);border-radius:999px;color:var(--copper2)}
+.plinks{display:flex;gap:18px}
+.plinks a{font-weight:700;color:var(--copper2)}
+
+/* hackathons */
+.hack{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px 36px;padding:26px 0;border-top:1px solid rgba(200,121,63,.3)}
+.hack h3{font-size:1.3rem}
+.hack .by{color:var(--muted);font-size:.95rem;margin-top:4px}
+.hack b{color:var(--copper2)}
+.hack p{margin:0}
+
+/* certs */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:20px;margin-bottom:40px}
+.cert-grid h3,.more h3{font-size:1.15rem;color:var(--copper2);margin-bottom:10px}
+.more{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:30px;padding-top:34px;border-top:1px solid rgba(200,121,63,.3)}
+.more p{margin:0}
+
+/* contact */
+.contact{background:var(--wine3);border-top:1px solid rgba(200,121,63,.3)}
+.contact h2{font-size:clamp(2.2rem,7vw,3.6rem)}
+.clist{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px;margin-bottom:34px}
+.clist div{min-width:0;overflow-wrap:anywhere}
+.clist small{display:block;color:var(--muted)}
+.clist a{font-weight:700;color:var(--copper2)}
+footer{padding:26px 0;text-align:center;color:var(--muted);font-size:.9rem;background:var(--wine)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+.no-js .rv{opacity:1;transform:none}
+
+@media (max-width:760px){
+  section{padding:62px 0}
+  .job,.hack{grid-template-columns:1fr}
+  .pgrid{grid-template-columns:1fr}
+  .feat ul{columns:1}
+  .cgrid{grid-template-columns:repeat(2,1fr)}
+  .cgrid div:nth-child(2){border-right:0}
+  .cgrid div:nth-child(-n+2){border-bottom:1px solid rgba(200,121,63,.25)}
+  .card,.card.feat{padding:22px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body class="no-js">
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">Sasmita</a>
+    <div class="links">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#hackathons">Hackathons</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="role">Full-Stack Developer | AI/ML Enthusiast | Chennai</p>
+    <h1>SASMITA</h1>
+    <p class="tag">I build web applications and AI-driven solutions, from ERP-style analytics platforms to emergency-response systems.</p>
+    <div class="cta">
+      <a class="btn solid" href="#projects">View Projects</a>
+      <a class="btn ghost" id="resumeBtn" href="resume.pdf" download>Download Resume</a>
+      <a class="btn ghost" href="#contact">Contact Me</a>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="about">
+  <div class="wrap rv">
+    <h2>About me</h2>
+    <p>I’m a Computer Science undergraduate from Chennai who enjoys turning ideas into working products. I’ve completed three internships across full-stack development, ZOHO business process automation and AI for Sustainability, and built projects at four hackathons.</p>
+    <p>I’m AWS AI/GenAI and Google AI certified, and I’m especially interested in Machine Learning, Generative AI, Responsible AI and Agentic AI. I’m looking for fresher, AI/ML and entry-level IT roles where I can build, learn and make an impact.</p>
+  </div>
+</section>
+
+<section class="counters" aria-label="At a glance">
+  <div class="wrap">
+    <div class="cgrid">
+      <div><div class="num" data-to="3">0</div><span>Internships</span></div>
+      <div><div class="num" data-to="4">0</div><span>Hackathons</span></div>
+      <div><div class="num" data-to="4" data-suf="+">0</div><span>Full-stack projects</span></div>
+      <div><div class="num" data-to="20" data-suf="+">0</div><span>Certifications and modules</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="skills">
+  <div class="wrap">
+    <h2 class="rv">Skills</h2>
+    <div class="sgrid rv">
+      <div class="skill"><h3>Languages and front end</h3><div class="chips"><span>Python</span><span>C++</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Tailwind CSS</span></div></div>
+      <div class="skill"><h3>Back end and databases</h3><div class="chips"><span>Node.js</span><span>Express</span><span>REST APIs</span><span>MongoDB</span><span>Leaflet maps</span></div></div>
+      <div class="skill"><h3>AI / ML and GenAI</h3><div class="chips"><span>Machine Learning</span><span>Generative AI</span><span>Responsible AI</span><span>Agentic AI</span><span>RAG</span><span>Prompt Engineering</span><span>AI-driven Data Analytics</span></div></div>
+      <div class="skill"><h3>Cloud</h3><div class="chips"><span>AWS Bedrock</span><span>AWS SageMaker</span><span>Amazon Q</span><span>Google Cloud GenAI</span></div></div>
+      <div class="skill"><h3>ZOHO and automation</h3><div class="chips"><span>ZOHO CRM</span><span>ZOHO Creator</span><span>Business process automation</span><span>RPA</span></div></div>
+      <div class="skill"><h3>Cybersecurity</h3><div class="chips"><span>IAM fundamentals</span><span>Phishing simulation</span><span>Security awareness</span></div></div>
+      <div class="skill"><h3>Soft skills</h3><div class="chips"><span>Communication</span><span>Leadership</span><span>Teamwork</span><span>Adaptability</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2 class="rv">Experience</h2>
+    <div class="job rv">
+      <time>Jul 2026 – Sep 2026</time>
+      <div><h3>AI for Sustainability Virtual Intern</h3><p class="org">1M1B (One Million for One Billion), supported by AICTE with IBM SkillsBuild</p>
+        <ul><li>Completed a structured internship on AI, Responsible AI, Agentic AI and Retrieval-Augmented Generation (RAG).</li><li>Explored AI applications for sustainability aligned with the UN SDGs.</li><li>Gained exposure to ethical AI practices and industry-oriented use cases.</li></ul></div>
+    </div>
+    <div class="job rv">
+      <time>Apr 2026 – May 2026</time>
+      <div><h3>Full Stack Development Intern</h3><p class="org">Savyasasy Software Solutions, Chennai</p>
+        <ul><li>Independently built Student &amp; Teacher Analytics, an ERP-style web app with admin, teacher and student views.</li><li>Developed the HTML/CSS/JavaScript front end, Python back end and MongoDB database, with real-time data visualisation.</li></ul></div>
+    </div>
+    <div class="job rv">
+      <time>Feb 2026 – Mar 2026</time>
+      <div><h3>ZOHO Product Intern</h3><p class="org">SynProSoft, Chennai</p>
+        <ul><li>Developed Masala Enterprise, a ZOHO-integrated business simulation covering purchase orders, inventory and invoice management.</li><li>Gained hands-on experience with ZOHO CRM and business process automation tools.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" style="background:var(--wine2)">
+  <div class="wrap">
+    <h2 class="rv">Projects</h2>
+    <div class="pgrid">
+      <article class="card feat rv">
+        <h3>ResQ: Emergency Information &amp; Alert Platform</h3>
+        <p class="pitch">A full-stack emergency reporting and control-room app built for speed and reliability.</p>
+        <ul><li>One-tap SOS for quick reporting</li><li>Duplicate incident clustering within 1 km and 30 minutes</li><li>Priority scoring so control rooms see critical cases first</li><li>English and Tamil interface</li><li>Offline queue with auto-sync when connectivity returns</li></ul>
+        <div class="tech"><span>React</span><span>Node.js</span><span>Express</span><span>Axios</span><span>Leaflet</span></div>
+        <div class="plinks"><a href="https://github.com/sasmita-vip" target="_blank" rel="noopener">GitHub</a></div>
+      </article>
+      <article class="card rv">
+        <h3>Student &amp; Teacher Analytics</h3>
+        <p class="pitch">An ERP-style platform for tracking student and teacher performance.</p>
+        <ul><li>Admin, teacher and student dashboards</li><li>Real-time analytics and data visualisation</li></ul>
+        <div class="tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Python</span><span>MongoDB</span></div>
+        <div class="plinks"><a href="https://github.com/sasmita-vip" target="_blank" rel="noopener">GitHub</a></div>
+      </article>
+      <article class="card rv">
+        <h3>Green Home Planners</h3>
+        <p class="pitch">A sustainable home planner that gives personalised eco-friendly tips.</p>
+        <ul><li>Python recommendation engine for green-living suggestions</li><li>Full-stack web interface</li></ul>
+        <div class="tech"><span>Python</span><span>Full-stack web</span></div>
+        <div class="plinks"><a href="https://github.com/sasmita-vip" target="_blank" rel="noopener">GitHub</a></div>
+      </article>
+      <article class="card rv">
+        <h3>Online Food Application</h3>
+        <p class="pitch">A food-ordering app inspired by Swiggy and Zomato.</p>
+        <ul><li>Browse-and-order flow</li><li>Customer note-to-service feature for special requests</li></ul>
+        <div class="tech"><span>Full-stack web</span></div>
+        <div class="plinks"><a href="https://github.com/sasmita-vip" target="_blank" rel="noopener">GitHub</a></div>
+      </article>
+      <article class="card rv">
+        <h3>Masala Enterprise</h3>
+        <p class="pitch">A ZOHO business simulation built during my ZOHO internship.</p>
+        <ul><li>Purchase orders, inventory and invoice management</li><li>CRM integration and workflow automation</li></ul>
+        <div class="tech"><span>ZOHO CRM</span><span>ZOHO Creator</span><span>Automation</span></div>
+        <div class="plinks"><a href="https://github.com/sasmita-vip" target="_blank" rel="noopener">GitHub</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="hackathons">
+  <div class="wrap">
+    <h2 class="rv">Hackathons</h2>
+    <div class="hack rv"><div><h3>AASHAV – The Hope 2026</h3><div class="by">SIMATS (Saveetha) · Team Monarchs</div></div><p><b>Sahay.</b> A unified disaster-response platform concept with one-tap SOS, geo-clustering of duplicate reports, priority scoring, a live disaster map and an offline-first SMS fallback.</p></div>
+    <div class="hack rv"><div><h3>CrisisCore</h3><div class="by">SRM Engineering College</div></div><p><b>Emergency reporting prototype.</b> A control-room prototype with SOS, incident clustering, priority scoring, a live Leaflet map, English/Tamil UI and offline sync. It became the base for ResQ.</p></div>
+    <div class="hack rv"><div><h3>Innobite</h3><div class="by">M.O.P. Vaishnav College for Women</div></div><p><b>SkyMind.</b> A government agricultural portal prototype for drone-based farm verification, with farmer record checks and a Leaflet map of drone flight radius.</p></div>
+    <div class="hack rv"><div><h3>Smart Grievance Redressal</h3><div class="by">M.O.P. Vaishnav College for Women</div></div><p><b>Service Delay Detector.</b> An RPA prototype that reads Excel records, compares elapsed days with SLA limits and flags cases as “SLA Breach Risk” or “On Track”.</p></div>
+  </div>
+</section>
+
+<section id="certifications" style="background:var(--wine2)">
+  <div class="wrap">
+    <h2 class="rv">Certifications</h2>
+    <div class="cert-grid rv">
+      <div><h3>AI and cloud</h3><ul><li>Google AI Certificate (5 courses)</li><li>AWS AI Practitioner (8 modules)</li><li>AWS Generative AI for Developers (7 modules)</li></ul></div>
+      <div><h3>AI/ML learning</h3><ul><li>Gen AI Assessment, FutureSkills Prime &amp; NASSCOM</li><li>AI/ML using Python, IIT Madras &amp; SWAYAM Plus</li></ul></div>
+      <div><h3>Data and general</h3><ul><li>Introduction to MongoDB</li><li>Financial Literacy</li></ul></div>
+      <div><h3>Forage simulations</h3><ul><li>Deloitte: Technology &amp; Data Analytics</li><li>Goldman Sachs: Internal Audit</li><li>Mastercard: Cybersecurity</li><li>TCS: Cybersecurity Analyst</li><li>Tata: GenAI Data Analytics</li></ul></div>
+    </div>
+    <div class="more rv">
+      <div><h3>Leadership &amp; achievements</h3><ul><li><b>Deputy Minister, M.O.P. Sansad (2025):</b> led committee discussions and represented a ministry at an event of 4,000+ students.</li><li><b>Member of Parliament, M.O.P. Sansad (2024)</b></li><li><b>Green Champions Award</b> (2022 and 2023)</li></ul></div>
+      <div><h3>Languages</h3><p>English (Fluent), Tamil (Fluent), Gujarati (Fluent), Hindi (Intermediate), French (Basic)</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap rv">
+    <h2>Let’s build something together.</h2>
+    <div class="clist">
+      <div><small>Email</small><a href="mailto:vi.p.sasmita@gmail.com">vi.p.sasmita@gmail.com</a></div>
+      <div><small>Location</small>Chennai, India</div>
+      <div><small>LinkedIn</small><a href="https://linkedin.com/in/sasmita-davey-9a713531b" target="_blank" rel="noopener">linkedin.com/in/sasmita-davey-9a713531b</a></div>
+      <div><small>GitHub</small><a href="https://github.com/sasmita-vip" target="_blank" rel="noopener">github.com/sasmita-vip</a></div>
+    </div>
+    <a class="btn solid" id="resumeBtn2" href="resume.pdf" download>Download Resume</a>
+  </div>
+</section>
+
+<footer>© 2026 Sasmita Vi P</footer>
+
+<script>
+document.body.classList.remove('no-js');
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function count(el){
+  var to=+el.dataset.to,suf=el.dataset.suf||'';
+  if(reduce){el.textContent=to+suf;return}
+  var t0=null;
+  function step(t){t0=t0||t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)))+(p===1?suf:'');if(p<1)requestAnimationFrame(step)}
+  requestAnimationFrame(step);
+}
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){count(e.target);co.unobserve(e.target)}})},{threshold:.6});
+  document.querySelectorAll('.num').forEach(function(el){co.observe(el)});
+}else{
+  document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')});
+  document.querySelectorAll('.num').forEach(function(el){el.textContent=el.dataset.to+(el.dataset.suf||'')});
+}
+</script>
+</body>
+</html>
